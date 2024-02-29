@@ -1,10 +1,10 @@
 {% extends 'core.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}Create Art{% endblock title %}
+{% block title %}Create Post{% endblock title %}
 
 {% block body %}
-    <div class="create-art">
+    <div class="create-post">
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form|crispy}}

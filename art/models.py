@@ -5,7 +5,7 @@ from django.urls import reverse
 
 # Create your models here.
 
-class Art(models.Model):
+class Post(models.Model):
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100, help_text='Name of the art')
     image = models.ImageField(upload_to='art')

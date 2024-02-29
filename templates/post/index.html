@@ -5,29 +5,29 @@
 
 {% block body %}
     <div class="card-container">
-    {% for art in arts %}
+    {% for post in posts %}
         <div class="card">
             <div class="card-item card-user">
                 <div class="card-user-img">
-                    <img src="{{art.image.url}}">
+                    <img src="{{post.image.url}}">
                 </div>
                 <div class="card-user-name">
                     TestUser
                 </div>
             </div>
             <div class="card-item card-image">
-                <img src="{{art.image.url}}">
+                <img src="{{post.image.url}}">
             </div>
             <div class="card-item card-likes">
                 <div class="like-button">
                     <button type="button">Like</button>
                 </div>
                 <div class="like-number">
-                    {{ art.likes }}
+                    {{ post.likes }}
                 </div>
             </div>
             <div class="card-item card-title">
-                <b>TestUser:</b> {{art.title}}
+                <b>TestUser:</b> {{post.title}}
             </div>
         </div>
     {% endfor %}

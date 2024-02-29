@@ -21,6 +21,15 @@ img{
     flex-direction: column;
 }
 
+.card{
+    margin-bottom: 20px;
+    border: none;
+}
+
+.card-item{
+    margin: 3px 0;
+}
+
 .card-user, .card-likes{
     display: flex;
     align-items: center;

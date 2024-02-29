@@ -4,6 +4,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.ArtListView.as_view(), name='art-home'),
-    path('create/', views.ArtCreateView.as_view(), name='art-create'),
+    path('', views.PostListView.as_view(), name='post-home'),
+    path('create/', views.PostCreateView.as_view(), name='post-create'),
 ]
