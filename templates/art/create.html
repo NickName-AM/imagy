@@ -1,0 +1,14 @@
+{% extends 'core.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create Art{% endblock title %}
+
+{% block body %}
+    <div class="create-art">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy}}
+            <input type="submit" class="submit-btn" value="Submit">
+        </form>
+    </div>
+{% endblock body %}

@@ -1,0 +1,20 @@
+{% extends 'core.html' %}
+{% load static %}
+
+{% block title %}Imagy{% endblock title %}
+
+{% block body %}
+    <div id="gallery">
+    {% for art in arts %}
+        <img alt="{{art.title}}" src="{{art.image.url}}">    
+    {% endfor %}
+    </div>
+    
+    <script type="text/javascript"> 
+			
+        jQuery(document).ready(function(){ 
+            jQuery("#gallery").unitegallery(); 
+        }); 
+    
+    </script>
+{% endblock body %}
