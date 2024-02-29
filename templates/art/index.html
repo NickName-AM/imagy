@@ -1,12 +1,37 @@
 {% extends 'core.html' %}
+{% load static %}
 
 {% block title %}Imagy{% endblock title %}
 
 {% block body %}
-    <div id="gallery">
+    <div class="card-container">
     {% for art in arts %}
-        <img alt="{{art.title}}" src="{{art.image.url}}">    
+        <div class="card">
+            <div class="card-item card-user">
+                <div class="card-user-img">
+                    <img src="{{art.image.url}}">
+                </div>
+                <div class="card-user-name">
+                    TestUser
+                </div>
+            </div>
+            <div class="card-item card-image">
+                <img src="{{art.image.url}}">
+            </div>
+            <div class="card-item card-likes">
+                <div class="like-button">
+                    <button type="button">Like</button>
+                </div>
+                <div class="like-number">
+                    {{ art.likes }}
+                </div>
+            </div>
+            <div class="card-item card-title">
+                <b>TestUser:</b> {{art.title}}
+            </div>
+        </div>
     {% endfor %}
     </div>
+    
     
 {% endblock body %}

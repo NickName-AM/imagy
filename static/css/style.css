@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body{
+    width: 40%;
+    margin: auto auto;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* art-home */
+.card-container, .card{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-user, .card-likes{
+    display: flex;
+    align-items: center;
+}
+
+.card-user .card-user-img{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.card-likes .like-button{
+    margin-right: 10px;
+}
