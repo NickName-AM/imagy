@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.decorators import login_required
+
 from post.models import Post
+
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -35,7 +38,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-
+@login_required
 def update_like(request, id):
     if request.method == 'POST':
         post = Post.objects.get(id=id)

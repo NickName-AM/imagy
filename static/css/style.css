@@ -55,3 +55,10 @@ img{
 .card-likes .like-button{
     margin-right: 10px;
 }
+
+.btn{
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow:  5px 5px 10px #e6e6e6,
+                 -5px -5px 10px #ffffff;
+}
