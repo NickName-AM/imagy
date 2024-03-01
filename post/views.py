@@ -52,3 +52,21 @@ def update_like(request, id):
     
     return redirect('post-home')
 
+class PostSearchView(ListView):
+    model = Post
+    template_name = 'post/search.html'
+    context_object_name = 'posts'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        search_data = self.request.GET['search-data']
+        posts = Post.objects.all()
+        filtered = []
+        for post in posts:
+            t = post.tags.split(' ')
+            if search_data in t:
+                filtered.append(post)
+        
+        print(filtered)
+
+        return context
