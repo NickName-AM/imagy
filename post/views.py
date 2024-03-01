@@ -16,8 +16,6 @@ class PostListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        posts = Post.objects.all().order_by('likes').values()
-        print(posts)
         return context
 
 class PostCreateView(LoginRequiredMixin, CreateView):
@@ -32,10 +30,12 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Post
     success_url = '/'
+    pk_url_kwarg = 'id'
+    template_name = 'post/confirm_delete.html'
 
     def test_func(self):
         post = self.get_object()
-        if self.request.user == product.user:
+        if self.request.user == post.user:
             return True
         return False
 
