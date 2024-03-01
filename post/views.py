@@ -16,7 +16,8 @@ class PostListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # print(context)
+        posts = Post.objects.all().order_by('likes').values()
+        print(posts)
         return context
 
 class PostCreateView(LoginRequiredMixin, CreateView):
