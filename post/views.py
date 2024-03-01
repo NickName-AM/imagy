@@ -42,7 +42,7 @@ def update_like(request, id):
         user = User.objects.get(id=request.user.id)
         post.liked_by += f' {user.username}'
         post.save()
-        if user.username not in post.liked_by:
+        if user.username not in post.liked_by.split(' '):
             post.likes += 1
             post.save()
     
