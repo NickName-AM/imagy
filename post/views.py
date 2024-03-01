@@ -40,7 +40,10 @@ def update_like(request, id):
     if request.method == 'POST':
         post = Post.objects.get(id=id)
         user = User.objects.get(id=request.user.id)
-        post.likes += 1
+        post.liked_by += f' {user.username}'
         post.save()
+        if user.username not in post.liked_by:
+            post.likes += 1
+            post.save()
     
     return redirect('post-home')
