@@ -32,7 +32,7 @@ img{
 
 .card{
     margin-bottom: 20px;
-    border: none;
+    border: 1px solid black;
 }
 
 .card-item{
@@ -65,4 +65,16 @@ img{
 .btn:hover{
     background-color: #FF0042;
     color: #fff;
+}
+
+.rounded-circle{
+    border:1px solid;
+    border-radius:50%;
+    width:50px;
+    height:50px;
+}
+
+.account-img{
+    width: 400px;
+    height: 400px;
 }
