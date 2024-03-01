@@ -22,7 +22,7 @@
         <div class="right-navbar">
             {% if request.user.is_authenticated %}
                 <div class="username">
-                    <a href="{% url 'profile' %}">{{ request.user.username }}</a>
+                    <a class="btn" href="{% url 'profile' %}">{{ request.user.username }}</a>
                 </div>
                 <div class="logout">
                     <form action="{% url 'logout' %}" method="POST">

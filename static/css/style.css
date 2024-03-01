@@ -39,9 +39,15 @@ img{
     margin: 3px 0;
 }
 
+.card-image{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .card-user, .card-likes{
     display: flex;
     align-items: center;
+    padding: 10px 10px;
 }
 
 .card-user .card-user-img{
@@ -77,4 +83,8 @@ img{
 .account-img{
     width: 400px;
     height: 400px;
+}
+
+.username{
+    padding-right: 10pxqqq;
 }
