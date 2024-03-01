@@ -62,6 +62,10 @@ img{
     margin-right: 10px;
 }
 
+.post-delete{
+    margin-left: 10px;
+}
+
 .btn{
     padding: 2px 10px;
     border: 1px solid #FF0042;

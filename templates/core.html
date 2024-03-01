@@ -24,6 +24,9 @@
                 <div class="username">
                     <a class="btn" href="{% url 'profile' %}">{{ request.user.username }}</a>
                 </div>
+                <div class="create-btn btn">
+                    <a href="{% url 'profile' %}" style="color: inherit; text-decoration: none;">Create</a>
+                </div>
                 <div class="logout">
                     <form action="{% url 'logout' %}" method="POST">
                         {% csrf_token %}

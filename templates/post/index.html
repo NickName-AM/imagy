@@ -12,7 +12,7 @@
                     <img src="{{post.user.profile.image.url}}">
                 </div>
                 <div class="card-user-name">
-                    {{post.user.username}}
+                    <a href="{% url 'profile-user' id=post.user.id %}">{{post.user.username}}</a>
                 </div>
             </div>
             <div class="card-item card-image">
