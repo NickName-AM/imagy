@@ -12,7 +12,7 @@
                     <img src="{{post.image.url}}">
                 </div>
                 <div class="card-user-name">
-                    TestUser
+                    {{post.user.username}}
                 </div>
             </div>
             <div class="card-item card-image">
@@ -20,14 +20,20 @@
             </div>
             <div class="card-item card-likes">
                 <div class="like-button">
-                    <button type="button">Like</button>
+                    <form action="{% url 'post-like' id=post.id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit">Like</button>
+                    </form>
                 </div>
                 <div class="like-number">
                     {{ post.likes }}
                 </div>
+                <div class="post-delete">
+                    <form action="{% url 'post-delete' id=post.id %}"></form>
+                </div>
             </div>
             <div class="card-item card-title">
-                <b>TestUser:</b> {{post.title}}
+                <b>{{ post.user.username }}:</b> {{post.title}}
             </div>
         </div>
     {% endfor %}

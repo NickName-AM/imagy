@@ -15,6 +15,9 @@
         <div class="left-navbar">Imagy</div>
         <div class="right-navbar">
             {% if request.user.is_authenticated %}
+                <div class="username">
+                    {{ request.user.username }}
+                </div>
                 <div class="logout">
                     <form action="{% url 'logout' %}" method="POST">
                         {% csrf_token %}
