@@ -12,30 +12,30 @@
 <body>
     
     <div class="navbar">
-        <div class="left-navbar">Imagy</div>
+        <div class="left-navbar"><a href="{% url 'post-home' %}" style="color: #000; text-decoration: none;">Imagy</a></div>
         <class class="search-bar">
             <form action="{% url 'post-search' %}" method="get">
                 <input type="text" placeholder="Search..." name="search-data">
-                <button class="btn">Button</button>
+                <button class="btn">Search</button>
             </form>
         </class>
         <div class="right-navbar">
             {% if request.user.is_authenticated %}
                 <div class="username">
-                    <a href="{%url 'profile' %}">{{ request.user.username }}</a>
+                    <a href="{% url 'profile' %}">{{ request.user.username }}</a>
                 </div>
                 <div class="logout">
                     <form action="{% url 'logout' %}" method="POST">
                         {% csrf_token %}
-                        <button type="submit">Logout</button>
+                        <button class="btn" type="submit">Logout</button>
                     </form>
                 </div>
             {% else %}
                 <div class="register">
-                    <a href="{% url 'register' %}">Register</a>
+                    <a class="btn" href="{% url 'register' %}">Register</a>
                 </div>
                 <div class="login">
-                    <a href="{% url 'login' %}">Login</a>
+                    <a class="btn" href="{% url 'login' %}">Login</a>
                 </div>
             {% endif %}
         </div>
