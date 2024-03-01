@@ -28,9 +28,13 @@
                 <div class="like-number">
                     {{ post.likes }}
                 </div>
+                {% if request.user == post.user %}
                 <div class="post-delete">
-                    <form action="{% url 'post-delete' id=post.id %}"></form>
+                    <form action="{% url 'post-delete' id=post.id %}">
+                        <button type="submit" class="btn">Delete</button>
+                    </form>
                 </div>
+                {% endif %}
             </div>
             <div class="card-item card-title">
                 <b>{{ post.user.username }}:</b> {{post.title}}
