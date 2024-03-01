@@ -67,6 +67,12 @@ class PostSearchView(ListView):
             if search_data in t:
                 filtered.append(post)
         
-        print(filtered)
+        context['posts'] = filtered
 
         return context
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'post/detail.html'
+    pk_url_kwarg = 'id'
+    context_object_name = 'post'

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm
+from django.contrib.auth.models import User
+from post.models import Post
 
 # Create your views here.
 
@@ -18,3 +20,11 @@ def register(request):
 
 def profile(request):
     return render(request, 'user/profile.html')
+
+def user_profile(request, id):
+    user = User.objects.get(id=id)
+    posts = Post.objects.filter(user=user)
+    if user:
+        return render(request, 'user/user_profile.html', context={'user': user, 'posts': posts})
+    
+    return redirect('post-home')
